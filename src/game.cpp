@@ -148,7 +148,6 @@ void Game::ProcessEnter()
 
             // Dialog box to display the correct answer
             wxMessageDialog dialog(_appwindow, "\nGame Over: " + _dictionary->GetTargetWord() + "\n", "", wxOK_DEFAULT | wxOK | wxICON_NONE);
-            dialog.SetTitle("Game Over");
             dialog.ShowModal();
 
             // Display the copy and restart buttons
