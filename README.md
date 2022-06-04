@@ -17,13 +17,13 @@ The game ends when either the word is correctly guessed, all letters are green, 
   * Windows: recommend using [MinGW](http://www.mingw.org/)
 * wxWidgets >= 3.0
   * Linux: `sudo apt-get install libwxgtk3.0-gtk3-dev libwxgtk3.0-gtk3-0v5`. Refer to the [official page](https://wiki.codelite.org/pmwiki.php/Main/WxWidgets30Binaries#toc2) for installing the unmet dependencies.
-  * Mac: There is a [homebrew installation available](https://formulae.brew.sh/formula/wxmac).
+  * Mac: Using homebrew to install `brew install wxwidgets` https://formulae.brew.sh/formula/wxwidgets
   * Installation instructions can be found [here](https://wiki.wxwidgets.org/Install). Some version numbers may need to be changed in instructions to install v3.0 or greater.
 
 ## Word list word.txt
-Linux contains a collections of words that are derived from scowl http://wordlist.aspell.net/scowl-readme/ The license within the readme allows use and redistribution. A subset of these collections is generated from linux using the instructions at https://leancrew.com/all-this/2022/01/wordle-letters/
+Linux contains a collections of words that are derived from scowl http://wordlist.aspell.net/scowl-readme/ The license within the readme allows use and redistribution and is included in the repository. A subset of these collections is generated from linux using the instructions at https://leancrew.com/all-this/2022/01/wordle-letters/
 For an american wordlist of 5 characters use:
-$ perl -nle 'print if /^[a-z]{5}$/' /usr/share/dict/american-english > words.txt
+`perl -nle 'print if /^[a-z]{5}$/' /usr/share/dict/american-english > words.txt`
 The word list is used to randomly select a target word and also to evaluate guesses for spelling.
 Additional words may be manually added or removed from the list.
 
@@ -31,7 +31,7 @@ Additional words may be manually added or removed from the list.
 A file containing a list of ascii characters grouped by the row they should appear on the keyboard. Enter is character 10 and Backspace is character 8. The game uses Capital letters only.
 
 ## Basic Build Instructions
-1. Clone this repo.
+1. Clone this repo. `git clone https://github.com/andrewparry/wordez.git`
 2. Make a build directory in the top level directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
 4. Ensure word.txt and kb.txt are in the top level directory
@@ -61,6 +61,10 @@ A file containing a list of ascii characters grouped by the row they should appe
   * README.md - Completed the 6 criteria for the readme.
   * Compiling and Testing - Utilizes cmake and make, succesfully tested compiling and running according to the build instructions on Linux, Mac and Windows
   * The project demonstrates an understanding of C++ functions and control structures.
+  *
+
+## Current Issues
+- Mac build has some wxwidget quirks, coloring is different and key press events are not working
 
 ## Future work
 - Use command line arguments e.g. for word and kb file
@@ -70,7 +74,7 @@ A file containing a list of ascii characters grouped by the row they should appe
 - Try different language and character set, may need a shift key.
 - TODO's in the code
 
-# 
+## Other  
 - Memory leak check 
 valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all --log-file=w%p.log ./wordez
 
