@@ -18,7 +18,7 @@ The game ends when either the word is correctly guessed, all letters are green, 
 * wxWidgets >= 3.0
   * Linux: `sudo apt-get install libwxgtk3.0-gtk3-dev libwxgtk3.0-gtk3-0v5`. Refer to the [official page](https://wiki.codelite.org/pmwiki.php/Main/WxWidgets30Binaries#toc2) for installing the unmet dependencies.
   * Mac: Using homebrew to install `brew install wxwidgets` https://formulae.brew.sh/formula/wxwidgets
-  * Installation instructions can be found [here](https://wiki.wxwidgets.org/Install). Some version numbers may need to be changed in instructions to install v3.0 or greater.
+  * Installation instructions can be found [here](https://wiki.wxwidgets.org/Install). Recommend [wxPack](https://github.com/rjpcomputing/wxpack/wiki) which includes gcc and wxwidgets.
 
 ## Word list word.txt
 Linux contains a collections of words that are derived from scowl http://wordlist.aspell.net/scowl-readme/ The license within the readme allows use and redistribution and is included in the repository. A subset of these collections is generated from linux using the instructions at https://leancrew.com/all-this/2022/01/wordle-letters/
