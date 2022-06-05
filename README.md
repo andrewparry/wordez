@@ -14,7 +14,7 @@ The game ends when either the word is correctly guessed, all letters are green, 
 * gcc/g++ >= 5.4
   * Linux: gcc / g++ is installed by default on most Linux distros
   * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
-  * Windows: recommend using [MinGW](http://www.mingw.org/)
+  * Windows: recommend using [MinGW](https://sourceforge.net/projects/mingw/)
 * wxWidgets >= 3.0
   * Linux: `sudo apt-get install libwxgtk3.0-gtk3-dev libwxgtk3.0-gtk3-0v5`. Refer to the [official page](https://wiki.codelite.org/pmwiki.php/Main/WxWidgets30Binaries#toc2) for installing the unmet dependencies.
   * Mac: Using homebrew to install `brew install wxwidgets` https://formulae.brew.sh/formula/wxwidgets
