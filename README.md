@@ -4,7 +4,7 @@ Clone of a popular word game written in C++. 5 Turns to guess a 5 letter randoml
 The game ends when either the word is correctly guessed, all letters are green, or all the turns are used up. At the end of the game. 
 
 ## Setup & Build
-# Dependencies (Same as Membot)
+# Dependencies
 * cmake >= 3.11
   * All OSes: [click here for installation instructions](https://cmake.org/install/)
 * make >= 4.1 (Linux, Mac), 3.81 (Windows)
