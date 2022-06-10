@@ -36,7 +36,6 @@ void Dictionary::ReadWordFile(std::string path)
         }
         wordfile.close();
     }
-    //TODO Assert on file error
 }
 
 //Generate random word from the vector of words

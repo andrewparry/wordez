@@ -29,13 +29,13 @@ public:
 private:
     void GenerateTurns();                               // Populate vector of Turn objects
     void Display();                                     // Display wxWidgets for Game panel
-    void DisplayTurns(wxWindow *panel);                 // Sub display function for the grid of turns
+    void DisplayTurns(wxWindow *panel);                 // Turn display function to display the grid of Letters
 
     void KeyboardCallback(int keycode);                 // Process keyboard key presses
     void ProcessEnter();                                // Process the Enter key being pressed at the end of a turn
     TurnResult EvaluateTurn();                          // Evaluate the outcome of a completed turn
 
-    void InActiveCallback(int keycode){};               // Dummy keyboard callback to ignore keypresses
+    void InActiveCallback(int keycode){};               // Dummy keyboard callback to ignore key presses
 
     void OnCopyButtonClicked(wxCommandEvent &evt);      // Copy wxEvent function
     void OnRestartButtonClicked(wxCommandEvent &evt);   // Restart wxEvent function

@@ -58,10 +58,13 @@ A file containing a list of ascii characters grouped by the row they should appe
 - icon.png - Application icon
 
 ## Addressing the Rubic
-  * README.md - Completed the 6 criteria for the readme.
-  * Compiling and Testing - Utilizes cmake and make, succesfully tested compiling and running according to the build instructions on Linux, Mac and Windows
-  * The project demonstrates an understanding of C++ functions and control structures.
-  *
+  * **README.md** - Completed the 6 criteria for the readme.
+  * **Compiling and Testing** - Utilizes cmake and make, developed, built and tested succesfully on a Linux Ubuntu environment, while I have provided Mac and Windows cross-platform build instructions, I did not build and test on those environments.
+  * **1. The project demonstrates an understanding of C++ functions and control structures.** Please review game.cpp as an example of a class utilizing various control structures and broken down by functions.
+  * **2. The project reads data from a file and process the data, or the program writes data to a file.** Please review dictionary.cpp class file, line 24, Dictionary::ReadWordFile, this function to read in a dictionary of words into a vector. Also the keyboard.cpp, line 94, Keyboard::ReadKeyboardFile function also reads in the keyboard layout and additinally uses istream to read lines into a vector of struct Keys (See keyboard.h, line 12 for definition).
+  * **3 The project uses Object Oriented Programming techniques.** - The project is built upon classes as described in the project structure above.
+  * **4 
+
 
 ## Current Issues
 - Mac build has some wxwidget quirks, coloring is different and key press events are not working
