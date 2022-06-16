@@ -28,17 +28,18 @@ WordezFrame::WordezFrame() : wxFrame(nullptr, wxID_ANY, wxString("Wordez"), wxDe
     Centre();
     SetIcon(wxIcon("../icon.png"));
     // Create new game and provide a call back to reset the game
-    _game = new Game(this, std::bind(&WordezFrame::ResetGame, this));
+    //_game = new Game(this, std::bind(&WordezFrame::ResetGame, this));
+    _game = std::make_unique<Game>(this, std::bind(&WordezFrame::ResetGame, this));
 }
 
 // Delete the game object and recreate to reset the game
 void WordezFrame::ResetGame()
 {
     // Reset the unique pointer to clean up the memory from the previous game
-    delete _game;
+    _game.reset();
     // Create new smart pointer to start new game
-    _game = new Game(this, std::bind(&WordezFrame::ResetGame, this));
-    //_game = std::make_unique<Game>(this, std::bind(&WordezFrame::ResetGame, this));
+    //_game = new Game(this, std::bind(&WordezFrame::ResetGame, this));
+    _game = std::make_unique<Game>(this, std::bind(&WordezFrame::ResetGame, this));
     // Refresh the Frame
     Layout();
 }
