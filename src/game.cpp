@@ -11,11 +11,8 @@
 #include "dictionary.h"
 
 // Setup the game
-Game::Game(wxWindow *appwindow, endgameCallbackName cb)
+Game::Game(wxWindow *appwindow, const endgameCallbackName &cb) : _appwindow(appwindow), _endgamecallback(cb)
 {
-    //std::cout << "\n***\nCreate Game Object " << this<< "\n***\n" << std::endl;
-    _appwindow = appwindow;
-    _endgamecallback = cb;
 
     // The Dictionary object contains all the word methods
     _dictionary = std::make_unique<Dictionary>();
@@ -95,7 +92,7 @@ void Game::Display()
 }
 
 // Callback from the Keyboard, process the key
-void Game::KeyboardCallback(int keycode)
+void Game::KeyboardCallback(const int &keycode)
 {
     // Pressed an A-Z char
     if (keycode >= 65 && keycode <= 90)

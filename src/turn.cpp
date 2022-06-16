@@ -8,23 +8,13 @@
 #include "dictionary.h"
 
 // Turn Constructor
-Turn::Turn(int id)
+Turn::Turn(const int &id) :_turnid(id)
 {
-    _turnid = id;
     GenerateLetters(Turnlength);
     _activeletter = std::move(_letters[0]);
 }
 Turn::~Turn()
 {   
-}
-
-// Create a vector of Letter objects
-void Turn::GenerateLetters(int numberofletters)
-{
-    for(int i=0; i<Turnlength; i++)
-    {
-        _letters.emplace_back( new Letter(_turnid, i));
-    }
 }
 
 // Display the turn of letter objects on the current panel
@@ -37,7 +27,7 @@ void Turn::DisplayTurn(wxWindow *panel)
 }
 
 // Set the active letter with the char l
-void Turn::SetLetter(int l)
+void Turn::SetLetter(const int &l)
 {
     _activeletter->SetLetter(l);
     int letterposition = _activeletter->GetLetterPos();
@@ -124,5 +114,14 @@ void Turn::ShiftRightLeft()
         // TODO replace with a wxTimer and Paint Event
         wxYield();
         wxMilliSleep(5);
+    }
+}
+
+// Create a vector of Letter objects
+void Turn::GenerateLetters(const int &numberofletters)
+{
+    for(int i=0; i<Turnlength; i++)
+    {
+        _letters.emplace_back( new Letter(_turnid, i));
     }
 }

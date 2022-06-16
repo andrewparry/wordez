@@ -23,7 +23,7 @@ class Game
 {
 public:
     using endgameCallbackName = std::function<void()>;  // Function wrapper for end game reset
-    Game(wxWindow *_appwindow, endgameCallbackName cb); // Game constructor
+    Game(wxWindow *_appwindow, const endgameCallbackName &cb); // Game constructor
     ~Game();                                            // Destructor
 
 private:
@@ -31,7 +31,7 @@ private:
     void Display();                                     // Display wxWidgets for Game panel
     void DisplayTurns(wxWindow *panel);                 // Turn display function to display the grid of Letters
 
-    void KeyboardCallback(int keycode);                 // Process keyboard key presses
+    void KeyboardCallback(const int &keycode);                 // Process keyboard key presses
     void ProcessEnter();                                // Process the Enter key being pressed at the end of a turn
     TurnResult EvaluateTurn();                          // Evaluate the outcome of a completed turn
 

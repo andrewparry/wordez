@@ -89,36 +89,8 @@ void Keyboard::OnKey(wxKeyEvent &evt)
   _kbcallback(evt.GetKeyCode());
 }
 
-// The file format is key_cap int character, int keyboard column, int keyboard row
-// Reads the keyboard file into the _keys vector of key struct
-void Keyboard::ReadKeyboardFile(std::string path)
-{
-  Keys key;
-  std::ifstream kbfile(path);
-  assert(kbfile.is_open());
-  if (kbfile.is_open())
-  {
-    std::string line;
-    while (std::getline(kbfile, line))
-    {
-      std::istringstream sline(line);
-      while (sline >> key.character >> key.grid_row) // key.grid_col >> key.grid_row)
-      {
-        if (key.character >= 65 && key.character <= 90)
-          key.key_cap = char(key.character);
-        
-        // Labels will be set at button creation for backspace and enter
-        if (key.character == 10 || key.character == 8)
-          key.key_cap = "";
-        _keys.emplace_back(key);
-      }
-    }
-    kbfile.close();
-  }
-}
-
 // Set the color of the keys according to the result of a turn.
-void Keyboard::SetKeys(std::string word, std::vector<int> result)
+void Keyboard::SetKeys(const std::string &word, const std::vector<int> &result)
 {
   for (int i = 0; i < result.size(); i++)
   {
@@ -147,5 +119,33 @@ void Keyboard::SetKeys(std::string word, std::vector<int> result)
         break;
       }
     }
+  }
+}
+
+// The file format is key_cap int character, int keyboard column, int keyboard row
+// Reads the keyboard file into the _keys vector of key struct
+void Keyboard::ReadKeyboardFile(const std::string &path)
+{
+  Keys key;
+  std::ifstream kbfile(path);
+  assert(kbfile.is_open());
+  if (kbfile.is_open())
+  {
+    std::string line;
+    while (std::getline(kbfile, line))
+    {
+      std::istringstream sline(line);
+      while (sline >> key.character >> key.grid_row) // key.grid_col >> key.grid_row)
+      {
+        if (key.character >= 65 && key.character <= 90)
+          key.key_cap = char(key.character);
+        
+        // Labels will be set at button creation for backspace and enter
+        if (key.character == 10 || key.character == 8)
+          key.key_cap = "";
+        _keys.emplace_back(key);
+      }
+    }
+    kbfile.close();
   }
 }

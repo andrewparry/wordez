@@ -24,7 +24,7 @@ public:
 
 private:
 
-    Game *_game;    // Pointer refering to the current Game object
+    Game *_game;    // Raw pointer refering to the current Game object
 };
 
 BEGIN_EVENT_TABLE(WordezFrame, wxFrame)

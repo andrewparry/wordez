@@ -11,11 +11,11 @@
 class Letter
 {
 public:
-    Letter(int turnid, int letterpos);          // Letter is a member of a turn and has a position
+    Letter(const int &turnid, const int &letterpos);          // Letter is a member of a turn and has a position
     ~Letter();
     int GetLetterPos() { return _letterpos; };  // Letter position
     void DisplayLetter(wxWindow *panel);        // Display the letter on the app window
-    void SetLetter(int l);                      // Sets the character of the letter
+    void SetLetter(const int &l);                      // Sets the character of the letter
     void SetColor(const int &color);            // Sets the color of the background
     void MoveX(int x);                          // Moves letter tile, used to wobble the tiles 
     std::string GetLetter();                    // Returns the set letter 

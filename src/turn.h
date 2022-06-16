@@ -13,10 +13,10 @@
 class Turn 
 {
     public:
-        Turn(int id);
+        Turn(const int &id);
         ~Turn();
         void DisplayTurn(wxWindow *panel);                  // Display the tiles of Letters
-        void SetLetter(int l);                              // Set the current letter to char of l
+        void SetLetter(const int &l);                              // Set the current letter to char of l
         int GetTurnId() { return _turnid;};                 // Return the current turn
         void Backspace();                                   // Delete letter
         bool TurnCompleted();                               // Evaluate if turn has been completed
@@ -26,7 +26,7 @@ class Turn
         std::string GetTurnResult() {return _turnResult;};  // Evaluate the result of the turn
 
     private:
-        void GenerateLetters(int letters);
+        void GenerateLetters(const int &letters);
 
         const int Turnlength = 5;                           // Number of letters in a turn
 

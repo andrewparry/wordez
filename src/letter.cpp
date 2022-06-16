@@ -6,10 +6,8 @@
 #include "letter.h"
 
 // Constructor and Destructor
-Letter::Letter(int turnid, int letterpos)
+Letter::Letter(const int &turnid, const int &letterpos) : _turnid(turnid), _letterpos(letterpos)
 {
-    _turnid = turnid;
-    _letterpos = letterpos;
     // Positioning - 63 x 63 tile is a nice size
     // TODO Make this all scalable
     _xpos = 96 + (_letterpos * 63);
@@ -31,7 +29,7 @@ void Letter::DisplayLetter(wxWindow *panel)
 }
 
 // Set the letter to the char value l, if 0 reset the value to ""
-void Letter::SetLetter(int l)
+void Letter::SetLetter(const int &l)
 {
     if (l == 0)
     {

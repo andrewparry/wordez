@@ -25,17 +25,17 @@ public:
     Keyboard(wxWindow *parent, wxWindowID id, wxPoint pos, wxSize sz);          // Keyboard inherits from wxPanel
     ~Keyboard();
     using someCallbackName = std::function<void(int)>;                          // Function wrapper for the call back to the game class
-    void SetCallback(someCallbackName cb) { _kbcallback = cb; }                 // Sets the call back to the game class                                        
+    void SetCallback(const someCallbackName &cb) { _kbcallback = cb; }                 // Sets the call back to the game class                                        
     void OnButtonClicked(wxCommandEvent &evt);                                  // Event handler for mouse events
     void OnKey(wxKeyEvent &evt);                                                // Event handler for keyboard events
 
-    void SetKeys(std::string word, std::vector<int> result);                    // Set color of keys based on the word result
+    void SetKeys(const std::string &word, const std::vector<int> &result);      // Set color of keys based on the word result
     
-    virtual bool AcceptsFocus() const override { return false; }                // wxWidgets focus setting
-    virtual bool AcceptsFocusFromKeyboard() const override { return false; }    // wxWidgets focus setting
+    virtual bool AcceptsFocus() const override { return false; }                // Override wxWidgets focus setting
+    virtual bool AcceptsFocusFromKeyboard() const override { return false; }    // Override wxWidgets focus setting
 
 private:
-    void ReadKeyboardFile(std::string path);                                    // Read file of keys and position in the keyboard
+    void ReadKeyboardFile(const std::string &path);                                    // Read file of keys and position in the keyboard
     std::vector<Keys> _keys;                                                    // Vector of _keys for the keyboard
     someCallbackName _kbcallback;                                               // The callback to the game object to process keys
 };
