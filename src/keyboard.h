@@ -4,7 +4,7 @@
 #include <vector>
 #include <functional>
 #include <wx/wx.h>
-#include "wx/button.h"
+#include <wx/button.h>
 #include <string>
 
 // The Keys struct Contains the position and character for each key in the keyboard.

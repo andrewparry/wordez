@@ -3,8 +3,8 @@
 #include <functional>
 
 #include <wx/wx.h>
-#include "wx/msgdlg.h"
-#include "wx/clipbrd.h"
+#include <wx/msgdlg.h>
+#include <wx/clipbrd.h>
 
 #include "game.h"
 #include "keyboard.h"

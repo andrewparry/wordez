@@ -23,19 +23,6 @@ The game was developed, built and tested in an Ubuntu Linux environment. While b
   * Mac: Using homebrew to install `brew install wxwidgets` https://formulae.brew.sh/formula/wxwidgets
   * Installation instructions can be found [here](https://wiki.wxwidgets.org/Install). Recommend [wxPack](https://github.com/rjpcomputing/wxpack/wiki) which includes gcc and wxwidgets.
 
-## Word list word.txt
-Linux contains collections of words that are derived from scowl http://wordlist.aspell.net/scowl-readme/ The license within the readme allows use and redistribution and is included in the repository. A subset of these collections is generated from linux using the instructions at https://leancrew.com/all-this/2022/01/wordle-letters/
-For an american wordlist of 5 characters use:
-`perl -nle 'print if /^[a-z]{5}$/' /usr/share/dict/american-english > words.txt`
-This word list is used to randomly select a target word and also to evaluate the guesses for spelling.
-Additional words may be manually added or removed from the list.
-
-## Keyboard file kb.txt
-A file containing a list of ascii characters grouped by the row they should appear on the keyboard. Enter is character 10 and Backspace is character 8. The game uses Capital letters only.
-
-## Icon file icon.png
-- icon.png - Application icon
-
 ## Build Instructions
 1. Clone this repo. `git clone https://github.com/andrewparry/wordez.git`
 2. Make a build directory in the top level directory: `mkdir build && cd build`
@@ -60,6 +47,19 @@ A file containing a list of ascii characters grouped by the row they should appe
   * Dictionary    Class of word functions. Loads a vector of words from the word.txt file, selects the target word, and evaluates guesses returning a result in a vector of ints.
 
   The game is driven by keyboard and mouse events. The Keyboard class processes key/mouse events to return a character, this is referenced to a call back function in the the Game object. If the charater is an alpha, the current letter is updated with the character, and the next letter in the turn becomes active waiting for input. Backspace will correctly clear the relevant value and change the active letter. When a turn is complete and the enter key is pressed, the word will be evaluated for correct spelling, and then the result is updated and game logic progresses to the next turn, until the end of game.
+
+## Word list file word.txt
+Linux contains collections of words that are derived from scowl http://wordlist.aspell.net/scowl-readme/ The license within the readme allows use and redistribution and is included in the repository. A subset of these collections is generated from linux using the instructions at https://leancrew.com/all-this/2022/01/wordle-letters/
+For an american wordlist of 5 characters use:
+`perl -nle 'print if /^[a-z]{5}$/' /usr/share/dict/american-english > words.txt`
+This word list is used to randomly select a target word and also to evaluate the guesses for spelling.
+Additional words may be manually added or removed from the list.
+
+## Keyboard file kb.txt
+A file containing a list of ascii characters grouped by the row they should appear on the keyboard. Enter is character 10 and Backspace is character 8. The game uses Capital letters only.
+
+## Icon file icon.png
+- icon.png - Application icon
 
 ## Addressing the Rubic
   * **README.md** - Completed the 6 criteria for the readme.
