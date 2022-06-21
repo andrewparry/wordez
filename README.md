@@ -19,7 +19,7 @@ At the end of the game there is an option to copy the game result to the clipboa
   * Mac: [install Xcode command line tools](https://developer.apple.com/xcode/features/)
   * Windows: recommend using [MinGW](https://sourceforge.net/projects/mingw/)
 * wxWidgets >= 3.0 using GTK3.0
-  * Linux: `sudo apt-get install -y libwxgtk3.0-gtk3-dev libwxgtk3.0-gtk3-0v5`. Refer to the [official page](https://wiki.codelite.org/pmwiki.php/Main/WxWidgets30Binaries#toc2) for installing the unmet dependencies. 
+  * Linux: `sudo apt-get install libwxgtk3.0-gtk3-dev libwxgtk3.0-gtk3-0v5`. Refer to the [official page](https://wiki.codelite.org/pmwiki.php/Main/WxWidgets30Binaries#toc2) for installing the unmet dependencies. 
   * Mac: Using homebrew to install `brew install wxwidgets` https://formulae.brew.sh/formula/wxwidgets
   * Installation instructions can be found [here](https://wiki.wxwidgets.org/Install). Recommend [wxPack](https://github.com/rjpcomputing/wxpack/wiki) which includes gcc and wxwidgets.
 
