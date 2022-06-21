@@ -24,7 +24,7 @@ At the end of the game there is an option to copy the game result to the clipboa
   * Installation instructions can be found [here](https://wiki.wxwidgets.org/Install). Recommend [wxPack](https://github.com/rjpcomputing/wxpack/wiki) which includes gcc and wxwidgets.
 
 ## Build Instructions
-1. Clone this repo. `git clone wx`
+1. Clone this repo. `git clone https://github.com/andrewparry/wordez.git`
 2. Make a build directory in the top level directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
 4. Ensure word.txt, kb.txt, and icon.png are in the top level directory
