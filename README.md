@@ -6,8 +6,8 @@ The game ends when either the word is correctly guessed and all letters are gree
 At the end of the game there is an option to copy the game result to the clipboard, and a second option to restart the game.
 
 ## Setup & Build
-The game was developed, built and tested in an Ubuntu Linux environment. While build instructions are provided for the Mac and Windows, the project was not built or tested on those platforms. I am happy to receive any feedback for improvement to enable cross platform builds.
-# Dependencies
+* The game was developed, built and tested in an Ubuntu Linux environment, utilizing the wxWidgets UI library on GTK3. While build instructions are provided for the Mac and Windows, the project was not built or tested on those platforms. I am happy to receive any feedback for improvement to enable cross platform builds. 
+# Dependencies 
 * cmake >= 3.11
   * All OSes: [click here for installation instructions](https://cmake.org/install/)
 * make >= 4.1 (Linux, Mac), 3.81 (Windows)
@@ -18,13 +18,13 @@ The game was developed, built and tested in an Ubuntu Linux environment. While b
   * Linux: gcc / g++ is installed by default on most Linux distros
   * Mac: [install Xcode command line tools](https://developer.apple.com/xcode/features/)
   * Windows: recommend using [MinGW](https://sourceforge.net/projects/mingw/)
-* wxWidgets >= 3.0
-  * Linux: `sudo apt-get install libwxgtk3.0-gtk3-dev libwxgtk3.0-gtk3-0v5`. Refer to the [official page](https://wiki.codelite.org/pmwiki.php/Main/WxWidgets30Binaries#toc2) for installing the unmet dependencies.
+* wxWidgets >= 3.0 using GTK3.0
+  * Linux: `sudo apt-get install -y libwxgtk3.0-gtk3-dev libwxgtk3.0-gtk3-0v5`. Refer to the [official page](https://wiki.codelite.org/pmwiki.php/Main/WxWidgets30Binaries#toc2) for installing the unmet dependencies. 
   * Mac: Using homebrew to install `brew install wxwidgets` https://formulae.brew.sh/formula/wxwidgets
   * Installation instructions can be found [here](https://wiki.wxwidgets.org/Install). Recommend [wxPack](https://github.com/rjpcomputing/wxpack/wiki) which includes gcc and wxwidgets.
 
 ## Build Instructions
-1. Clone this repo. `git clone https://github.com/andrewparry/wordez.git`
+1. Clone this repo. `git clone wx`
 2. Make a build directory in the top level directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
 4. Ensure word.txt, kb.txt, and icon.png are in the top level directory
@@ -63,7 +63,7 @@ A file containing a list of ascii characters grouped by the row they should appe
 
 ## Addressing the Rubic
   * **README.md** - Completed the 6 criteria for the readme.
-  * **Compiling and Testing** - Utilizes cmake and make, developed, built and tested succesfully on a Linux Ubuntu environment.
+  * **Compiling and Testing** - Utilizes cmake and make, developed, built and tested succesfully on a Linux Ubuntu environment. While the project does compile and run in the Udacity VM, this instance of linux uses a GTK2 build of wxWidgets, the game runs sunccesfully but UI experience is not optimal. Attempting to install the GTK3.0 wxWidget libraries as a dependancy fails.
   * **1. The project demonstrates an understanding of C++ functions and control structures.** Please review game.cpp file as an example of a class utilizing various control structures and broken down by functions.
   * **2. The project reads data from a file and process the data, or the program writes data to a file.** Please review dictionary.cpp class file, line 24, Dictionary::ReadWordFile, this function reads a file into a vector of words. Also the keyboard.cpp, line 94, Keyboard::ReadKeyboardFile function also reads in the keyboard layout and additinally uses istream to split lines into a vector of struct Keys (See keyboard.h, line 12 for the struct definition).
   * **3 The project uses Object Oriented Programming techniques.** The project is built upon classes as described in the project structure above.
