@@ -63,7 +63,7 @@ A file containing a list of ascii characters grouped by the row they should appe
 
 ## Addressing the Rubic
   * **README.md** - Completed the 6 criteria for the readme.
-  * **Compiling and Testing** - Utilizes cmake and make, developed, built and tested succesfully on a Linux Ubuntu environment. While the project does compile and run in the Udacity VM, this instance of linux uses a GTK2 build of wxWidgets, the game runs sunccesfully but UI experience is not optimal. Attempting to install the GTK3.0 wxWidget libraries as a dependancy fails.
+  * **Compiling and Testing** - Utilizes cmake and make, developed, built and tested succesfully on a Linux Ubuntu environment. While the project does compile and run in the Udacity Workspace VM, this instance of linux uses a GTK2 build of wxWidgets, the game runs sunccesfully but UI experience is not optimal. Attempting to install the GTK3.0 wxWidget libraries in the worspace fail.
   * **1. The project demonstrates an understanding of C++ functions and control structures.** Please review game.cpp file as an example of a class utilizing various control structures and broken down by functions.
   * **2. The project reads data from a file and process the data, or the program writes data to a file.** Please review dictionary.cpp class file, line 24, Dictionary::ReadWordFile, this function reads a file into a vector of words. Also the keyboard.cpp, line 94, Keyboard::ReadKeyboardFile function also reads in the keyboard layout and additinally uses istream to split lines into a vector of struct Keys (See keyboard.h, line 12 for the struct definition).
   * **3 The project uses Object Oriented Programming techniques.** The project is built upon classes as described in the project structure above.
@@ -88,4 +88,5 @@ for the first guess to be submitted.
 - Project was lots of fun, explored many avenues developing the game, and using what was learnt in the course.
 - Memory leak check 
 valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all --log-file=w%p.log ./wordez
+- Switch wxWidget GTK configs 'sudo update-alternatives --config wx-config'
 
