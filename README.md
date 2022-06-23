@@ -1,9 +1,11 @@
 ## wordez - A C++ clone of a popular word game.
-Take 5 Turns to guess a 5 letter, randomly selected, word. If the guess is a word in the dictionary, a color coded result is given on each of the guess's letters. Green, if the letter is in the target word and in the right place, Yellow, if the letter is in the word but not in the correct location and grey, when the letter is not in the word. The keyboard letters are also updated with the color coding to help aid follow on guesses. Incorrectly spelt words will shake for a second. 
+Take 6 Turns to guess a 5 letter, randomly selected, word. If the guess is a word in the dictionary, a color coded result is given on each of the guess's letters. Green, if the letter is in the target word and in the right place, Yellow, if the letter is in the word but not in the correct location and grey, when the letter is not in the word. The keyboard letters are also updated with the color coding to help aid follow on guesses. Incorrectly spelt words will shake for a second. 
 
 The game ends when either the word is correctly guessed and all letters are green, or all the turns are used up. 
 
 At the end of the game there is an option to copy the game result to the clipboard, and a second option to restart the game.
+
+See How to Play Instructions PDF file for detailed instructions.
 
 ## Setup & Build
 * The game was developed, built and tested in an Ubuntu Linux environment, utilizing the wxWidgets UI library on GTK3. While build instructions are provided for the Mac and Windows, the project was not built or tested on those platforms. I am happy to receive any feedback for improvement to enable cross platform builds. 
